@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+const shelljs = require('shelljs');
+const chalk = require('chalk');
+const project = process.argv[3];
+const ttt = process.env.Project;
+console.log(ttt, 232323, project);
+
+
+if (project) {
+    const work = `yarn workspace ${project} run dev`;
+    shelljs.exec(work);
+} else {
+    console.log(chalk.red('抱歉，项目未被受理~~~'));
+}
